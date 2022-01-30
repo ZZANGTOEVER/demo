@@ -1,4 +1,4 @@
-package com.example.demo.market.dto;
+package com.example.demo.upbit.dto;
 
 import lombok.Data;
 
