@@ -1,9 +1,9 @@
-package com.example.demo.upbit.dto;
+package com.example.demo.dto;
 
 import lombok.Data;
 
 @Data
-public class MarketDto {
+public class UpbitMarketDto {
 
     private String market;
     private String korean_name;

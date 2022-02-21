@@ -1,7 +1,7 @@
-package com.example.demo.bitthumb.service;
+package com.example.demo.service.bitthumb;
 
+import com.example.demo.dto.BitthumbPriceInfoDTO;
 import com.example.demo.feign.BitthumbFeignClient;
-import com.example.demo.bitthumb.dto.TickerDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ public class BitthumbService {
 
     private final BitthumbFeignClient bitthumbFeignClient;
 
-    public TickerDTO getTicker() {
+    public BitthumbPriceInfoDTO getTicker() {
         return bitthumbFeignClient.getTicker();
     }
 }

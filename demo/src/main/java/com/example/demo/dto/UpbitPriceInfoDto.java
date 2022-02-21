@@ -1,9 +1,9 @@
-package com.example.demo.upbit.dto;
+package com.example.demo.dto;
 
 import lombok.Data;
 
 @Data
-public class TickerDto {
+public class UpbitPriceInfoDto {
 
     private String market;
     private String trade_date;

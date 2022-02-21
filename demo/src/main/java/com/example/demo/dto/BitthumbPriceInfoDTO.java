@@ -1,11 +1,11 @@
-package com.example.demo.bitthumb.dto;
+package com.example.demo.dto;
 
 import lombok.Data;
 
 import java.util.HashMap;
 
 @Data
-public class TickerDTO {
+public class BitthumbPriceInfoDTO {
     private String status;
     private HashMap data;
 //    private String opening_price	    ; // 시가 00시 기준	Number (String)
