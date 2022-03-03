@@ -12,7 +12,10 @@ public class BitthumbService {
 
     private final BitthumbFeignClient bitthumbFeignClient;
 
-    public BitthumbPriceInfoDTO getTicker() {
-        return bitthumbFeignClient.getTicker();
+    public BitthumbPriceInfoDTO getTickerKrw() {
+        return bitthumbFeignClient.getTickerKrw();
+    }
+    public BitthumbPriceInfoDTO getTickerBtc() {
+        return bitthumbFeignClient.getTickerBtc();
     }
 }

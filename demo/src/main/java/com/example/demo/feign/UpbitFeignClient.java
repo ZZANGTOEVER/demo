@@ -17,6 +17,6 @@ public interface UpbitFeignClient {
 
     // 현재가 정보
     @GetMapping(value = "/ticker/")
-    List<UpbitPriceInfoDto> getTicker(@RequestParam("markets") String markets);
+    List<UpbitPriceInfoDto> getTicker(@RequestParam("markets") String coinStr);
 
 }

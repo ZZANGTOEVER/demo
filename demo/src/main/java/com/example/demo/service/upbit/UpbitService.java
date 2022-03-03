@@ -23,9 +23,30 @@ public class UpbitService {
         return upbitFeignClient.getTicker(markets);
     }
 
-    public HashMap<String, UpbitPriceInfoDto> getALLTicker() {
+    public HashMap<String, UpbitPriceInfoDto> getKrwTicker(String[] coinList) {
         HashMap<String, UpbitPriceInfoDto> result = new HashMap<>();
-        List<UpbitPriceInfoDto> res = upbitFeignClient.getTicker("KRW-BTC, KRW-ETH, KRW-XRP, KRW-DOGE");
+        String reqStr = "";
+        for(String coinNm : coinList){
+            reqStr += "KRW-"+ coinNm + ", ";
+        }
+        reqStr = reqStr.substring(0, reqStr.length()-2);
+        List<UpbitPriceInfoDto> res = upbitFeignClient.getTicker(reqStr);
+        for(UpbitPriceInfoDto tmp : res){
+            result.put(tmp.getMarket(), tmp);
+        }
+        return result;
+    }
+
+    public HashMap<String, UpbitPriceInfoDto> getBtcTicker(String[] coinList) {
+        HashMap<String, UpbitPriceInfoDto> result = new HashMap<>();
+        String reqStr = "";
+        for(String coinNm : coinList){
+            if(coinNm.equals("BTC"))
+                    continue;
+            reqStr += "BTC-"+ coinNm + ", ";
+        }
+        reqStr = reqStr.substring(0, reqStr.length()-2);
+        List<UpbitPriceInfoDto> res = upbitFeignClient.getTicker(reqStr);
         for(UpbitPriceInfoDto tmp : res){
             result.put(tmp.getMarket(), tmp);
         }
