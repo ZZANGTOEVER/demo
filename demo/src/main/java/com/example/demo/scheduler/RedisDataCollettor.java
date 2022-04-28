@@ -26,7 +26,7 @@ public class RedisDataCollettor {
     RedisService redisService = new RedisService();
 
 //    @Scheduled(cron = "0/10 * * * * ?")
-    @Scheduled(cron = "0 1 * * *")
+    @Scheduled(cron = "0 1 * * * *")
     public void scheduleTaskUsingCronExpression(){
         try{
             String[] tmpMarket = {"KRW-BTC", "KRW-ETH", "KRW-XRP", "KRW-DOGE"};
